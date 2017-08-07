@@ -1,0 +1,66 @@
+.fields {
+            border-radius: 5px;
+            border-color: rgb(128, 92, 160);
+            border-style: solid;
+            border-width: 2px;
+            padding: 10px;
+            width: 400px;
+            font-size: 16px;
+        }
+
+        .labels {
+            color: rgb(128, 92, 160);
+        }
+
+        #centerDiv {
+            text-align: center;
+            padding: 30px;
+        }
+        #name {
+            margin-left: 33px;
+        }
+
+        #barcode {
+            margin-left: 72px;
+        }
+
+        #quantity {
+            margin-left: 72px;
+        }
+
+        #price {
+            margin-left: 92px;
+        }
+        #todoButton {
+            margin-left: 450px;
+        }
+        .myButton {
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        .pname{
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        .bcode{
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        .quan{
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        .pric{
+            padding-left: 45px;
+            padding-right: 45px;
+        }

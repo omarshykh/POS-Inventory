@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="stylesheets/change.css">
+    <link rel="shortcut icon" href="http://res.cloudinary.com/oi12345/image/upload/v1502091793/change_b0a9bh.png">
+    <title>Change Password</title>
+</head>
+<body>
+    <h2 id="heading">Change Password</h2>
+    <table>
+        <tr>
+            <td class="labels">Enter Previous Password</td>
+            <td><input type='password' class='fields' placeholder='Enter Previous Password'></td>
+        </tr>
+        <tr>
+            <td class="labels">Enter Previous Password Again</td>
+            <td><input type='password' class='fields' placeholder='Enter Previous Password Again'></td>
+        </tr>
+        <tr>
+            <td class="labels">Enter New Password</td>
+            <td><input type='password' class='fields' placeholder='Enter New Password'></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="check()" id="mybutton" style="float:right">Submit</button></td>
+        </tr>
+    </table>
+
+    <script>
+    function check(){
+        //alert("Hello");
+        var fieldsData=document.getElementsByClassName('fields');
+        var flag=true,king;
+        for(var i=0;i<fieldsData.length;i++){
+            if(fieldsData[i].value===""){
+                flag=false;
+                king=i;
+                break;
+            }
+        }
+        if(flag){
+            if(fieldsData[0].value===fieldsData[1].value){
+                var index=localStorage.getItem('indexLogin');
+                var users=localStorage.getItem('users');
+                users=JSON.parse(users);
+                var userLogin=localStorage.getItem('userLogin');
+                userLogin=JSON.parse(userLogin);
+
+                if(users[index].password===fieldsData[0].value && userLogin.password===fieldsData[0].value){
+                    var newPassword=fieldsData[2].value;
+                    users[index].password=newPassword;
+                    userLogin.password=newPassword;
+                    users=JSON.stringify(users);
+                    userLogin=JSON.stringify(userLogin);
+                    localStorage.setItem('users',users);
+                    localStorage.setItem('userLogin',userLogin);
+                    alert('Password changed successfully');
+                    window.close();
+                }
+                else{
+                    alert('You entered previous password wrong!!');
+                    fieldsData[0].focus();
+                }
+            }
+            else{
+                alert("You can't entered both previous passwords same!!");
+                fieldsData[0].focus();
+            }
+        }
+        else{
+            alert("Please filled all fields!");
+            fieldsData[king].focus();
+        }
+    }
+    </script>
+</body>
+</html>

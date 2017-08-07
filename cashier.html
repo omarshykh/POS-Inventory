@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="boot/bootstrap.min.css">
+    <script src="boot/jquery.min.js"></script>
+    <script src="boot/bootstrap.min.js"></script>
+    <script src="js/time.js"></script>
+    <link rel="stylesheet" href="stylesheets/cashier.css">
+    <link rel="shortcut icon" href="http://res.cloudinary.com/oi12345/image/upload/v1502091792/cashier_envvst.png">
+    <title>Cashier Panel</title>
+</head>
+<body onload="startTime(),setDate(),setUserName()">
+
+<!-- Navbar starts-->
+    <nav class="navbar navbar-inverse" style="background-color:rgb(128,92,160);border-style:none">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+                <a class="navbar-brand" href="javascript:void(0)" style="padding-top:0px">
+                    <img src="http://res.cloudinary.com/oi12345/image/upload/v1502091751/logo_utral0.png" alt="Logo here" >
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="javascript:void(0)" id="username" style="color:white">Login</a></li>
+                    <li><a href="javascript:void(0)" id="date" style="color:white"></a></li>
+                    <li><a href="javascript:void(0)" id="time" style="color:white"></a></li>
+                    <li><a href="javascript:void(0)" id="logout" style="color:white" class="hoverNav"></a></li>
+                    <li><a href="javascript:void(0)" onclick="changePass()" id="changepass" style="color:white" class="hoverNav">Change Password</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar ends-->
+
+    <div class="row">
+        <div class="col-sm-8" style="padding:10px;padding-left:30px;">
+            <div id="maindiv">
+           <label for="barcode" class="labels">Barcode</label>
+           <input type="text" id="barcode" class="fields" size="28" style="margin-left:18px" onkeypress="handleKeyPressBarcode(event)">
+            <label for="totalitems" class="labels">Total Items</label>
+           <input type="text" id="totalitems" class="fields" size="5" style="margin-left:34px" readonly>
+           <button id="print" onclick="endShopping()">Print Reciept</button>
+           <br><br>
+           <label for="quantity" class="labels">Quantity</label>
+           <input type="text" id="quantity" class="fields" size="28" style="margin-left:18px"onkeypress="handleKeyPressQuantity(event)">
+            <label for="totalamount" class="labels">Total Amount</label>
+           <input type="text" id="totalamount" class="fields" size="5" style="margin-left:18px" readonly> Rs.
+           <br><br>
+           <table id='mytable'>
+               <tr>
+                   <th class="sno"><b><u>Barcode#</u></b></th>
+                   <th class="pname"><b><u>Product Name</u></b></th>
+                   <th class="quan"><b><u>Quantity</u></b></th>
+                   <th class="price"><b><u>Price</u></b></th>
+               </tr>
+           </table>
+            </div>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+
+    <script src="js/cashier.js"></script>
+</body>
+</html>

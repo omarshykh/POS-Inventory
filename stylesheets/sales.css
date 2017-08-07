@@ -1,0 +1,26 @@
+table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        .date{
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        .bcode{
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        .quan{
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        .price{
+            padding-left: 45px;
+            padding-right: 45px;
+        }
